@@ -16,7 +16,7 @@ public class Worker implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long idLong;
+	private Long id;
 
 	private String name;
 
@@ -26,19 +26,19 @@ public class Worker implements Serializable {
 
 	}
 
-	public Worker(Long idLong, String name, Double dailyIncome) {
+	public Worker(Long id, String name, Double dailyIncome) {
 		super();
-		this.idLong = idLong;
+		this.id = id;
 		this.name = name;
 		this.dailyIncome = dailyIncome;
 	}
 
 	public Long getIdLong() {
-		return idLong;
+		return id;
 	}
 
-	public void setIdLong(Long idLong) {
-		this.idLong = idLong;
+	public void setIdLong(Long id) {
+		this.id = id;
 	}
 
 	public String getName() {
@@ -62,7 +62,7 @@ public class Worker implements Serializable {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + ((dailyIncome == null) ? 0 : dailyIncome.hashCode());
-		result = prime * result + ((idLong == null) ? 0 : idLong.hashCode());
+		result = prime * result + ((id == null) ? 0 : id.hashCode());
 		result = prime * result + ((name == null) ? 0 : name.hashCode());
 		return result;
 	}
@@ -81,10 +81,10 @@ public class Worker implements Serializable {
 				return false;
 		} else if (!dailyIncome.equals(other.dailyIncome))
 			return false;
-		if (idLong == null) {
-			if (other.idLong != null)
+		if (id == null) {
+			if (other.id != null)
 				return false;
-		} else if (!idLong.equals(other.idLong))
+		} else if (!id.equals(other.id))
 			return false;
 		if (name == null) {
 			if (other.name != null)
